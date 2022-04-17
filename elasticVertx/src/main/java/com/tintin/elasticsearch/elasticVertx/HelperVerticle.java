@@ -1,5 +1,6 @@
-package com.nitin.Demo;
+package com.tintin.elasticsearch.elasticVertx;
 
+import io.vertx.core.AbstractVerticle;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,13 +20,13 @@ import org.elasticsearch.action.search.SearchScrollRequest;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.core.TimeValue;
+import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.Scroll;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 
-import io.vertx.core.AbstractVerticle;
+
 import io.vertx.core.eventbus.Message;
 
 public class HelperVerticle extends AbstractVerticle{
@@ -41,7 +42,7 @@ public class HelperVerticle extends AbstractVerticle{
     }
 
     private void allDetailsInFile(Message<Object> msg) throws IOException {
-        String filepath = "C:\\Users\\Nitin\\OneDrive\\Desktop\\Vertx Projects\\elasticsearch_vertx\\employees.txt";
+        String filepath = "employees.txt";
 		RestHighLevelClient client = new RestHighLevelClient(
 				RestClient.builder(new HttpHost("localhost", 9200, "http")));
         Path path = Paths.get(filepath);
@@ -95,5 +96,4 @@ public class HelperVerticle extends AbstractVerticle{
 		System.out.println(succeeded);
         msg.reply(String.valueOf(succeeded));
     }
-    
 }

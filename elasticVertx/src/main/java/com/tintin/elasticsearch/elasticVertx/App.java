@@ -1,5 +1,4 @@
-package com.nitin.Demo;
-
+package com.tintin.elasticsearch.elasticVertx;
 
 import io.vertx.core.Vertx;
 
