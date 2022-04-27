@@ -1,0 +1,12 @@
+[
+    {
+        "id": "id1",
+        "archieval-Interval": 1,
+        "storage-type": "S3"
+    },
+    {
+        "id": "id2",
+        "archieval-Interval": 2,
+        "storage-type": "File Server"
+    }
+]
